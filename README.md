@@ -1,4 +1,4 @@
-# Ubuntu 18.04 CUDA 10.0 
+# MaskRCNN Install with Ubuntu 18.04 + CUDA 10.0 + cuDNN7.3.1 + TensorflowGPU&CPU
 -----------------------------------------------------------------------------------------------------------------------------
 # MaskRCNN Installation 
 
