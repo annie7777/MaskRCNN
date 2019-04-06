@@ -1,4 +1,4 @@
-# Installing Tensorflow-GPU with NVIDIA CUDA 9.0 on a Google Cloud Platform VM instance Ubuntu 16.04
+# Installing Tensorflow-GPU with NVIDIA CUDA 9.0/10.0 on a Google Cloud Platform VM instance Ubuntu 16.04
 -----------------------------------------------------------------------------------------------------------------------------
 # Step 1: Setup a google cloud vm instance
 ## Create a vm instance
@@ -40,8 +40,8 @@ Finally, test if everthing is working by running
 nvidia-smi
 nvcc --version
 ```
-which will give you details about your GPU.
-
+which will give you details about your GPU(ps: I found that cuda was updated to 10.0 after installing tensorflow-gpu using conda).
+![GitHub Logo](/images/nvdia.PNG)
 # Step 2: Install cudnn
 ```
 wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-9.0-linux-x64-v7.3.1.20.tgz
