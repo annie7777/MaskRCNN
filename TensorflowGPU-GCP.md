@@ -1,4 +1,4 @@
-# Installing Tensorflow-GPU with NVIDIA CUDA 9.0/10.0 on a Google Cloud Platform VM instance Ubuntu 16.04
+# Installing Tensorflow-GPU with NVIDIA CUDA 9.0 on a Google Cloud Platform VM instance Ubuntu 16.04
 -----------------------------------------------------------------------------------------------------------------------------
 # Step 1: Setup a google cloud vm instance
 ## Create a vm instance
@@ -40,8 +40,9 @@ Finally, test if everthing is working by running
 nvidia-smi
 nvcc --version
 ```
-which will give you details about your GPU(ps: I found that cuda was updated to 10.0 after installing tensorflow-gpu using conda).
+which will give you details about your GPU(ps: cuda here is 10.0 not 9.0, check the post [here](https://stackoverflow.com/questions/53422407/different-cuda-versions-shown-by-nvcc-and-nvidia-smi). The simple answer is that: nvidia-smi shows you the CUDA version that your driver supports. You have one of the recent 410.x drivers installed which support CUDA 10. The version the driver supports has nothing to do with the version you compile and link your program against. A driver that supports CUDA 10.0 will also be able to run an application that was built for CUDA 9.2)
 ![GitHub Logo](/images/nvdia.PNG)
+![GitHub Logo](/images/nvcc.PNG)
 # Step 2: Install cudnn
 ```
 wget https://s3.amazonaws.com/open-source-william-falcon/cudnn-9.0-linux-x64-v7.3.1.20.tgz
@@ -93,6 +94,11 @@ I reinstalled tensorflow-gpu with [conda](https://anaconda.org/anaconda/tensorfl
 Ref is [here](https://github.com/tensorflow/tensorflow/issues/10026).
 ```
 conda install -c anaconda tensorflow-gpu 
+
+# then export path again
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export CUDA_HOME=/usr/local/cuda
+export PATH="$PATH:/usr/local/cuda/bin
 
 ```
 
