@@ -98,7 +98,7 @@ conda install -c anaconda tensorflow-gpu
 # then export path again
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
 export CUDA_HOME=/usr/local/cuda
-export PATH="$PATH:/usr/local/cuda/bin
+export PATH="$PATH:/usr/local/cuda/bin"
 
 ```
 
